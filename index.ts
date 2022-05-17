@@ -9,9 +9,9 @@ interface ToDo {
 const url = 'https://jsonplaceholder.typicode.com/todos/1';
 
 axios.get(url).then(response => {
-    const {id, title, completed} = response.data as ToDo;
+    const toDo = response.data as ToDo;
 
-    logToDo(id, title, completed)
+    logToDo(toDo.id, toDo.title, toDo.completed)
 });
 
 const logToDo = (id: number, title: string, status: boolean): void => {
